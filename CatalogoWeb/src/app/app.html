@@ -1,0 +1,28 @@
+<header class="barra">
+  <a class="marca" routerLink="/productos">
+    K-Store
+    <span>Gestión de catálogo</span>
+  </a>
+
+  <nav aria-label="Navegación principal">
+    <a
+      routerLink="/productos"
+      routerLinkActive="activo"
+      ariaCurrentWhenActive="page"
+    >
+      Productos
+    </a>
+
+    <a
+      routerLink="/categorias"
+      routerLinkActive="activo"
+      ariaCurrentWhenActive="page"
+    >
+      Categorías
+    </a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>

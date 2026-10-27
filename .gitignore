@@ -1,0 +1,22 @@
+# Dependencias y archivos generados de Angular
+node_modules/
+.angular/
+dist/
+coverage/
+
+# Archivos generados del backend
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Configuración privada local
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store

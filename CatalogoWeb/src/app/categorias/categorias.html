@@ -1,0 +1,62 @@
+<section class="contenedor">
+  <header class="encabezado">
+    <div>
+      <span class="etiqueta">ADMINISTRACIÓN DEL CATÁLOGO</span>
+      <h1>Categorías</h1>
+      <p>Organiza las categorías de tus productos.</p>
+    </div>
+
+    <button
+      type="button"
+      (click)="cargarCategorias()"
+      [disabled]="cargando()"
+    >
+      Actualizar lista
+    </button>
+  </header>
+
+  @if (cargando()) {
+    <p class="mensaje" role="status">Cargando categorías...</p>
+  } @else if (error(); as mensajeError) {
+    <div class="mensaje error" role="alert">
+      <p>{{ mensajeError }}</p>
+      <button type="button" (click)="cargarCategorias()">
+        Reintentar
+      </button>
+    </div>
+  } @else {
+    <div class="tarjeta">
+      <div class="resumen">
+        Categorías registradas: {{ categorias().length }}
+      </div>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (categoria of categorias(); track categoria.id) {
+              <tr>
+                <td>{{ categoria.id }}</td>
+                <td class="nombre">{{ categoria.nombre }}</td>
+                <td>
+                  {{ categoria.descripcion || 'Sin descripción' }}
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="3">Todavía no hay categorías registradas.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+</section>

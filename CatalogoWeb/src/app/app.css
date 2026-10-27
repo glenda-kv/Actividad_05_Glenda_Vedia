@@ -1,0 +1,53 @@
+.barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 32px;
+  border-bottom: 1px solid #e5e7ef;
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #7057d9;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.marca span {
+  color: #68758b;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #526078;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.activo {
+  background: #eeeafd;
+  color: #7057d9;
+}
+
+@media (max-width: 640px) {
+  .barra {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
